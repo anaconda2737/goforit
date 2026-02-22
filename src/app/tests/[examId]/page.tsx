@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import styles from "../../exam-pages.module.scss";
 
 type Question = {
   id: number;
@@ -89,32 +90,34 @@ export default function ExamAttemptPage() {
     }
   };
 
-  if (isLoading) return <div style={{ padding: 20 }}>Loading test...</div>;
-  if (error) return <div style={{ padding: 20 }}>{error}</div>;
-  if (!exam) return <div style={{ padding: 20 }}>Test not found.</div>;
+  if (isLoading) return <div className={styles.stateBox}>Loading test...</div>;
+  if (error) return <div className={styles.stateBox}>{error}</div>;
+  if (!exam) return <div className={styles.stateBox}>Test not found.</div>;
 
   return (
-    <main style={{ maxWidth: 960, margin: "0 auto", padding: "24px 16px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ margin: 0 }}>{exam.title}</h1>
-        <button onClick={() => router.push("/tests")}>Back</button>
+    <main className={styles.page}>
+      <div className={styles.contentHeader}>
+        <h1 className={styles.title}>{exam.title}</h1>
+        <button className={styles.btnSecondary} onClick={() => router.push("/tests")}>
+          Back
+        </button>
       </div>
-      <p style={{ marginTop: 8, color: "#666" }}>
+      <p className={styles.metaLarge}>
         {exam.examType} | {exam.durationMinutes || 30} mins
       </p>
-      {exam.description && <p style={{ color: "#444" }}>{exam.description}</p>}
+      {exam.description && <p className={styles.descriptionLarge}>{exam.description}</p>}
 
       {!result ? (
         <>
-          <div style={{ marginTop: 16, display: "grid", gap: 14 }}>
+          <div className={styles.questionGrid}>
             {exam.questions.map((q, qIndex) => (
-              <section key={q.id} style={{ border: "1px solid #ddd", borderRadius: 8, padding: 12 }}>
-                <h3 style={{ marginTop: 0 }}>
+              <section key={q.id} className={styles.questionCard}>
+                <h3 className={styles.questionTitle}>
                   Q{qIndex + 1}. {q.question}
                 </h3>
-                <div style={{ display: "grid", gap: 8 }}>
+                <div className={styles.optionList}>
                   {q.options.map((option, optIndex) => (
-                    <label key={optIndex} style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                    <label key={optIndex} className={styles.optionLabel}>
                       <input
                         type="radio"
                         checked={answers[qIndex] === optIndex}
@@ -128,19 +131,23 @@ export default function ExamAttemptPage() {
             ))}
           </div>
 
-          <div style={{ marginTop: 16 }}>
-            <button onClick={submitTest} disabled={submitting}>
+          <div className={styles.actions}>
+            <button className={styles.btnPrimary} onClick={submitTest} disabled={submitting}>
               {submitting ? "Submitting..." : "Submit Test"}
             </button>
           </div>
         </>
       ) : (
-        <section style={{ marginTop: 16, border: "1px solid #ddd", borderRadius: 8, padding: 16 }}>
-          <h2 style={{ marginTop: 0 }}>Result</h2>
-          <p>Score: {result.score} / {result.totalMarks}</p>
-          <p>Attempted: {result.attempted} / {result.totalQuestions}</p>
-          <p>Percentage: {result.percentage}%</p>
-          <button onClick={() => router.push("/tests")}>Go to Tests</button>
+        <section className={styles.resultCard}>
+          <h2 className={styles.resultTitle}>Result</h2>
+          <p className={styles.resultMeta}>Score: {result.score} / {result.totalMarks}</p>
+          <p className={styles.resultMeta}>Attempted: {result.attempted} / {result.totalQuestions}</p>
+          <p className={styles.resultMeta}>Percentage: {result.percentage}%</p>
+          <div className={styles.actions}>
+            <button className={styles.btnPrimary} onClick={() => router.push("/tests")}>
+              Go to Tests
+            </button>
+          </div>
         </section>
       )}
     </main>
