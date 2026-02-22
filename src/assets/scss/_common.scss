@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --primary-color: #673ab7;
+  --text-color: #202124;
+  --bg-color: #f0ebf8;
+}
+
+body {
+  font-size: 16px;
+}
+
+input,
+textarea,
+button {
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

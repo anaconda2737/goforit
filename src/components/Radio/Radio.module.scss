@@ -1,0 +1,10 @@
+.field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  input {
+    width: 15px;
+    height: 15px;
+    accent-color: var(--primary-color);
+  }
+}
