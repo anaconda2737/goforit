@@ -5,7 +5,7 @@ import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "Goforit",
-  description: "Google Form Clone",
+  description: "Goforit",
 };
 
 export default function RootLayout({

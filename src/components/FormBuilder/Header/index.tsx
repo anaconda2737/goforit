@@ -70,7 +70,7 @@ const Header = ({
           <input
             ref={inputRef}
             name="title"
-            defaultValue={title || "Google Form"}
+            defaultValue={title || "Goforit"}
             onChange={handleChange}
             onBlur={toggleTitle}
             hidden={hide}

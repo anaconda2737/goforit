@@ -475,7 +475,7 @@ export const templates: Record<string, any> = {
   },
   starterTemplate: {
     isDefault: true,
-    title: "Google Form",
+    title: "Goforit",
     bgCode: "#f0ebf8",
     colorCode: "#673ab7",
     sections: [

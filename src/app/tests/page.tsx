@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { connectDb } from "lib/db";
 import Exam from "lib/models/exam";
+import styles from "../exam-pages.module.scss";
 
 export const dynamic = "force-dynamic";
 
@@ -15,42 +16,31 @@ export default async function TestsPage() {
     .lean();
 
   return (
-    <main style={{ maxWidth: 960, margin: "0 auto", padding: "32px 16px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ margin: 0 }}>Test Series</h1>
-        <Link href="/">Home</Link>
+    <main className={styles.page}>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Goforit Tests</h1>
+        <Link className={styles.link} href="/">
+          Home
+        </Link>
       </div>
 
       {exams.length === 0 ? (
-        <p style={{ marginTop: 16 }}>No tests available yet.</p>
+        <p className={styles.emptyState}>No tests available yet.</p>
       ) : (
-        <div
-          style={{
-            marginTop: 20,
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
-            gap: 12,
-          }}
-        >
+        <div className={`${styles.grid} ${styles.gridWide}`.trim()}>
           {exams.map((exam: any) => (
             <Link
               key={exam._id.toString()}
               href={`/tests/${exam._id.toString()}`}
-              style={{
-                border: "1px solid #ddd",
-                borderRadius: 8,
-                padding: 14,
-                textDecoration: "none",
-                color: "inherit",
-              }}
+              className={styles.card}
             >
-              <h3 style={{ margin: 0 }}>{exam.title}</h3>
-              <p style={{ margin: "6px 0", fontSize: 13, color: "#555" }}>{exam.examType}</p>
-              <p style={{ margin: "6px 0", fontSize: 12, color: "#777" }}>
+              <h3 className={styles.cardTitle}>{exam.title}</h3>
+              <p className={styles.meta}>{exam.examType}</p>
+              <p className={styles.meta}>
                 {(exam.questions || []).length} questions | {exam.durationMinutes || 30} mins
               </p>
               {exam.description && (
-                <p style={{ margin: "8px 0 0", fontSize: 12, color: "#666" }}>{exam.description}</p>
+                <p className={styles.description}>{exam.description}</p>
               )}
             </Link>
           ))}

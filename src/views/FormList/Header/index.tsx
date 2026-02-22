@@ -27,7 +27,7 @@ const Header = ({ search, user, logout }: HeaderProps) => {
     <div className={styles.container}>
       <div className={styles.logo}>
         {googleFormIcon}
-        <span>Google Form</span>
+        <span>Goforit</span>
       </div>
       <div className={styles.search_box}>
         <input

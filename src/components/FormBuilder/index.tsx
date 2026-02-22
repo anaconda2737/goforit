@@ -454,7 +454,7 @@ const FormBuilder = (formPage: FormPages) => {
                     </div>
                   )}
                   <div className={styles.footer}>
-                    <span>Google Form</span>
+                    <span>Goforit</span>
                   </div>
                 </div>
               )}

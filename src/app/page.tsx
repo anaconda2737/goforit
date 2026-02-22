@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { connectDb } from "lib/db";
 import Exam from "lib/models/exam";
+import styles from "./exam-pages.module.scss";
 
 export const dynamic = "force-dynamic";
 
@@ -18,45 +19,37 @@ export default async function Home() {
   const { exams } = await getHomeData();
 
   return (
-    <main style={{ maxWidth: 960, margin: "0 auto", padding: "32px 16px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 }}>
-        <h1 style={{ margin: 0 }}>Testbook Lite</h1>
-        <div style={{ display: "flex", gap: 12 }}>
-          <Link href="/tests">All Tests</Link>
-          <Link href="/auth/login">Admin Login</Link>
-          <Link href="/admin/dashboard">Admin Dashboard</Link>
+    <main className={styles.page}>
+      <div className={styles.header}>
+        <h1 className={styles.title}>Goforit</h1>
+        <div className={styles.nav}>
+          <Link className={styles.link} href="/tests">
+            All Tests
+          </Link>
+          <Link className={styles.link} href="/auth/login">
+            Admin Login
+          </Link>
+          <Link className={styles.link} href="/admin/dashboard">
+            Admin Dashboard
+          </Link>
         </div>
       </div>
 
       {exams.length === 0 ? (
-        <p style={{ marginTop: 16 }}>No tests available yet.</p>
+        <p className={styles.emptyState}>No tests available yet.</p>
       ) : (
-        <div
-          style={{
-            marginTop: 20,
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-            gap: 12,
-          }}
-        >
+        <div className={styles.grid}>
           {exams.map((exam: any) => (
             <Link
               key={exam._id.toString()}
               href={`/tests/${exam._id.toString()}`}
-              style={{
-                border: "1px solid #ddd",
-                borderRadius: 8,
-                padding: 14,
-                textDecoration: "none",
-                color: "inherit",
-                background: "#fff",
-              }}
+              className={styles.card}
             >
-              <h3 style={{ margin: 0, fontSize: 18 }}>{exam.title || "Untitled Test"}</h3>
-              <p style={{ margin: "6px 0 0", fontSize: 12, color: "#666" }}>
+              <h3 className={styles.cardTitle}>{exam.title || "Untitled Test"}</h3>
+              <p className={styles.meta}>
                 {exam.examType} | {(exam.questions || []).length} questions | {exam.durationMinutes || 30} mins
               </p>
-              <p style={{ margin: "8px 0 0", fontSize: 12, color: "#666" }}>
+              <p className={styles.meta}>
                 Updated: {new Date(exam.updatedAt).toLocaleString()}
               </p>
             </Link>

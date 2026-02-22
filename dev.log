@@ -1,0 +1,93 @@
+
+> nextjs@0.1.0 dev
+> next dev --webpack
+
+⚠ Attempted to load @next/swc-win32-x64-msvc, but an error occurred: \\?\D:\google-form\nextjs\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node is not a valid Win32 application.
+\\?\D:\google-form\nextjs\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of D:\package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * D:\google-form\nextjs\package-lock.json
+
+▲ Next.js 16.1.6 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://10.90.214.116:3000
+- Environments: .env.local
+
+✓ Starting...
+  Skipping creating a lockfile at D:\google-form\nextjs\.next\dev\lock because we're using WASM bindings
+✓ Ready in 14.7s
+○ Compiling /auth/login ...
+⚠ ./src/app/globals.scss.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[15].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[15].oneOf[11].use[5]!./src/app/globals.scss
+Deprecation Warning on line 0, column 8 of file:///D:/google-form/nextjs/src/app/globals.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "../assets/scss/index";
+
+src\app\globals.scss 1:9  root stylesheet
+
+Import trace for requested module:
+./src/app/globals.scss.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[15].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[15].oneOf[11].use[5]!./src/app/globals.scss
+./src/app/globals.scss
+
+./src/app/globals.scss.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[15].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[15].oneOf[11].use[5]!./src/app/globals.scss
+Deprecation Warning on line 0, column 8 of file:///D:/google-form/nextjs/src/assets/scss/index.scss:0:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+0 | @import "./fonts";
+
+src\assets\scss\index.scss 1:9  @import
+src\app\globals.scss 1:9        root stylesheet
+
+Import trace for requested module:
+./src/app/globals.scss.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[15].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[15].oneOf[11].use[5]!./src/app/globals.scss
+./src/app/globals.scss
+
+./src/app/globals.scss.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[15].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[15].oneOf[11].use[5]!./src/app/globals.scss
+Deprecation Warning on line 1, column 8 of file:///D:/google-form/nextjs/src/assets/scss/index.scss:1:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+1 | @import "./icons";
+
+src\assets\scss\index.scss 2:9  @import
+src\app\globals.scss 1:9        root stylesheet
+
+Import trace for requested module:
+./src/app/globals.scss.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[15].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[15].oneOf[11].use[5]!./src/app/globals.scss
+./src/app/globals.scss
+
+./src/app/globals.scss.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[15].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[15].oneOf[11].use[5]!./src/app/globals.scss
+Deprecation Warning on line 2, column 8 of file:///D:/google-form/nextjs/src/assets/scss/index.scss:2:8:
+Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+2 | @import "./common";
+
+src\assets\scss\index.scss 3:9  @import
+src\app\globals.scss 1:9        root stylesheet
+
+Import trace for requested module:
+./src/app/globals.scss.webpack[javascript/auto]!=!./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[15].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[15].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[15].oneOf[11].use[5]!./src/app/globals.scss
+./src/app/globals.scss
+⨯ ReferenceError: document is not defined
+    at Object.get (src\utils\index.tsx:18:17)
+    at Login (src\views\Login\index.tsx:38:14)
+  16 |
+  17 |   const get = (name: string): string | null => {
+> 18 |     let match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+     |                 ^
+  19 |     return match ? match[2] : null;
+  20 |   };
+  21 | {
+  digest: '789686135'
+}
+ GET /auth/login?url=%2Fform%2Flist 200 in 28.7s (compile: 23.7s, render: 5.0s)
